@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27705.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CultureInfos", "CultureInfos\CultureInfos.csproj", "{409B21A4-CCBD-457F-9D08-D73CDF298F30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CultureInfoRepository", "CultureInfoRepository\CultureInfoRepository.csproj", "{433D165F-5F8A-4045-8DE4-050DA89FB2DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{409B21A4-CCBD-457F-9D08-D73CDF298F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{409B21A4-CCBD-457F-9D08-D73CDF298F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{409B21A4-CCBD-457F-9D08-D73CDF298F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{433D165F-5F8A-4045-8DE4-050DA89FB2DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{433D165F-5F8A-4045-8DE4-050DA89FB2DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{433D165F-5F8A-4045-8DE4-050DA89FB2DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{433D165F-5F8A-4045-8DE4-050DA89FB2DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
