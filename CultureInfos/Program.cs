@@ -8,7 +8,7 @@ namespace CultureInfos
     {
         private static void DutchCultures(CultureInfoRepository.CultureInfoRepository cir)
         {
-            Console.WriteLine("-----DUTCH------");
+            Console.WriteLine("-----DUTCH (all)------");
             var cis = cir.CultureInfos.Where(c => c.EnglishName.ToLower().StartsWith("dutch"));
 
             foreach (var ci in cis)
@@ -21,19 +21,20 @@ namespace CultureInfos
         {
             var cir = new CultureInfoRepository.CultureInfoRepository();
 
-            //DutchCultures(cir);
-            //PortugueseCultures(cir);
-
+            Console.WriteLine("---Just Dutch (nl)----");
             WriteInfo(cir.CultureInfos.First((c) => c.Name == "nl"));
+            Console.WriteLine("---Just English (en)----");
             WriteInfo(cir.CultureInfos.First((c) => c.Name == "en"));
+            DutchCultures(cir);
+            EnglishCultures(cir);
 
             Console.ReadLine();
         }
 
-        private static void PortugueseCultures(CultureInfoRepository.CultureInfoRepository cir)
+        private static void EnglishCultures(CultureInfoRepository.CultureInfoRepository cir)
         {
-            Console.WriteLine("-----PORTUGUESE------");
-            var cis = cir.CultureInfos.Where(c => c.EnglishName.ToLower().StartsWith("portuguese"));
+            Console.WriteLine("-----ENGLISH (all)------");
+            var cis = cir.CultureInfos.Where(c => c.EnglishName.ToLower().StartsWith("english"));
 
             foreach (var ci in cis)
             {
