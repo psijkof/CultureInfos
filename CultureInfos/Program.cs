@@ -1,22 +1,14 @@
-﻿using CultureInfoRepository;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Linq;
 
 namespace CultureInfos
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
-        {
-            var cir = new CultureInfoRepository.CultureInfoRepository();
-            DutchCultures(cir);
-            PortugueseCultures(cir);
-            Console.ReadLine();
-        }
-
         private static void DutchCultures(CultureInfoRepository.CultureInfoRepository cir)
         {
+            Console.WriteLine("-----DUTCH (all)------");
             var cis = cir.CultureInfos.Where(c => c.EnglishName.ToLower().StartsWith("dutch"));
 
             foreach (var ci in cis)
@@ -25,9 +17,24 @@ namespace CultureInfos
             }
         }
 
-        private static void PortugueseCultures(CultureInfoRepository.CultureInfoRepository cir)
+        private static void Main(string[] args)
         {
-            var cis = cir.CultureInfos.Where(c => c.EnglishName.ToLower().StartsWith("portuguese"));
+            var cir = new CultureInfoRepository.CultureInfoRepository();
+
+            Console.WriteLine("---Just Dutch (nl)----");
+            WriteInfo(cir.CultureInfos.First((c) => c.Name == "nl"));
+            Console.WriteLine("---Just English (en)----");
+            WriteInfo(cir.CultureInfos.First((c) => c.Name == "en"));
+            DutchCultures(cir);
+            EnglishCultures(cir);
+
+            Console.ReadLine();
+        }
+
+        private static void EnglishCultures(CultureInfoRepository.CultureInfoRepository cir)
+        {
+            Console.WriteLine("-----ENGLISH (all)------");
+            var cis = cir.CultureInfos.Where(c => c.EnglishName.ToLower().StartsWith("english"));
 
             foreach (var ci in cis)
             {
@@ -35,11 +42,17 @@ namespace CultureInfos
             }
         }
 
-
-        static private void WriteInfo(CultureInfo ci)
+        private static void WriteInfo(CultureInfo ci)
         {
-            Console.WriteLine($"LCID: {ci.LCID}\n\rISO: {ci.TwoLetterISOLanguageName}\n\rNativeName: {ci.NativeName}\n\rName: {ci.Name}\n\rEnglishName: {ci.EnglishName}\n\rThreeLetterISO: {ci.ThreeLetterISOLanguageName}\n\r");
-
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.WriteLine($"LCID: {ci.LCID}");
+            Console.WriteLine($"ISO: {ci.TwoLetterISOLanguageName}");
+            Console.WriteLine($"NativeName: {ci.NativeName}");
+            Console.WriteLine($"Name: {ci.Name}");
+            Console.WriteLine($"EnglishName: {ci.EnglishName}");
+            Console.WriteLine($"ThreeLetterISO: {ci.ThreeLetterISOLanguageName}");
+            Console.WriteLine($"Number Format:{string.Format(ci, "{0:C}", 123987239.87)}");
+            Console.WriteLine();
         }
     }
 }

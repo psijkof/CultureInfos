@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
+﻿using System.Globalization;
 
 namespace CultureInfoRepository
 {
@@ -9,7 +6,6 @@ namespace CultureInfoRepository
     {
         public CultureInfoRepository()
         {
-
         }
 
         public CultureInfo[] CultureInfos
@@ -18,7 +14,6 @@ namespace CultureInfoRepository
             {
                 return CultureInfo.GetCultures(CultureTypes.AllCultures);
             }
-
         }
     }
 }
