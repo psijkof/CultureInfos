@@ -20,13 +20,20 @@ namespace CultureInfos
         private static void Main(string[] args)
         {
             var cir = new CultureInfoRepository.CultureInfoRepository();
-
+            
             Console.WriteLine("---Just Dutch (nl)----");
             WriteInfo(cir.CultureInfos.First((c) => c.Name == "nl"));
             Console.WriteLine("---Just English (en)----");
             WriteInfo(cir.CultureInfos.First((c) => c.Name == "en"));
             DutchCultures(cir);
             EnglishCultures(cir);
+
+            Console.WriteLine(Environment.NewLine);
+            var list = CultureInfo.GetCultures(CultureTypes.AllCultures).Where(ci => ci.TwoLetterISOLanguageName.ToLower() == "nl").ToList();
+            foreach (var item in list)
+            {
+                Console.WriteLine($"{item.Name},{item.NativeName},{item.DisplayName}, {item.EnglishName} ");
+            }
 
             Console.ReadLine();
         }
